@@ -11,7 +11,7 @@ source:
   sha256: 3bb0870a26b050e2b0cd1bdb27690a9cffbd2f4e3b5b546ddef554765e92d75f
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - chemprop_train=chemprop.train:chemprop_train
