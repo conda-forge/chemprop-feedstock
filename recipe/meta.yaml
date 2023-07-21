@@ -1,5 +1,5 @@
 {% set name = "chemprop" %}
-{% set version = "1.5.2" %}
+{% set version = "1.6.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/chemprop-{{ version }}.tar.gz
-  sha256: bf8dd5a8a5507233e81630508562b4a4b35a502a451b45694891c3c1ee57d04f
+  sha256: d0d8701c93b6819ef804a375b09bd2f29bf0fdb5228f08632d733703e25ed051
 
 build:
   number: 0
@@ -44,13 +44,13 @@ requirements:
     - tqdm >=4.45.0
     - typed-argument-parser >=1.6.1
     - rdkit
+    - descriptastorus
 
 test:
   imports:
     - chemprop
     - chemprop.data
   commands:
-    - pip check
     - chemprop_train --help
     - chemprop_predict --help
     - chemprop_fingerprint --help
@@ -59,8 +59,6 @@ test:
     - chemprop_web --help
     - sklearn_train --help
     - sklearn_predict --help
-  requires:
-    - pip
 
 about:
   home: http://chemprop.csail.mit.edu/
