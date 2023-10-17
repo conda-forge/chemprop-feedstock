@@ -3,21 +3,13 @@ About chemprop-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/chemprop-feedstock/blob/main/LICENSE.txt)
 
-Home: http://chemprop.csail.mit.edu/
+Home: https://github.com/chemprop/chemprop
 
 Package license: MIT
 
-Summary: Message Passing Neural Networks for Molecule Property Prediction
+Summary: Molecular Property Prediction with Message Passing Neural Networks
 
 Development: https://github.com/chemprop/chemprop
-
-Documentation: https://chemprop.readthedocs.io/en/latest/
-
-This repository contains message passing neural networks for molecular
-property prediction as described in the paper Analyzing Learned
-Molecular Representations for Property Prediction and as used in the
-paper A Deep Learning Approach to Antibiotic Discovery.
-
 
 Current build status
 ====================
@@ -153,5 +145,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@JacksonBurns](https://github.com/JacksonBurns/)
 * [@jan-janssen](https://github.com/jan-janssen/)
 
