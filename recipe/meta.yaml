@@ -47,7 +47,7 @@ test:
   imports:
     - chemprop
   commands:
-    - pip check
+    # - pip check  # rdkit is not correctly recognized
     - chemprop_train --help
     - chemprop_predict --help
     - chemprop_fingerprint --help
