@@ -148,6 +148,3 @@ Feedstock Maintainers
 * [@JacksonBurns](https://github.com/JacksonBurns/)
 * [@jan-janssen](https://github.com/jan-janssen/)
 
-
-<!-- dummy commit to enable rerendering -->
-
