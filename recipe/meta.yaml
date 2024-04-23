@@ -12,52 +12,34 @@ source:
 build:
   noarch: python
   entry_points:
-    - chemprop_train=chemprop.train:chemprop_train
-    - chemprop_predict=chemprop.train:chemprop_predict
-    - chemprop_fingerprint=chemprop.train:chemprop_fingerprint
-    - chemprop_hyperopt=chemprop.hyperparameter_optimization:chemprop_hyperopt
-    - chemprop_interpret=chemprop.interpret:chemprop_interpret
-    - chemprop_web=chemprop.web.run:chemprop_web
-    - sklearn_train=chemprop.sklearn_train:sklearn_train
-    - sklearn_predict=chemprop.sklearn_predict:sklearn_predict
+    - chemprop=chemprop.cli.main:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python <3.9,>=3.7
+    - python <3.13,>=3.11
     - pip
   run:
-    - sphinx_rtd_theme >=2.0.0
-    - werkzeug <3
-    - python <3.9,>=3.7
-    - flask >=1.1.2,<=2.1.3
-    - hyperopt >=0.2.3
-    - matplotlib-base >=3.1.3
-    - numpy >=1.18.1
-    - pandas >=1.0.3
-    - pandas-flavor >=0.2.0
-    - scikit-learn >=0.22.2.post1
-    - sphinx >=3.1.2
-    - tensorboardx >=2.0
-    - pytorch >=1.4.0
-    - tqdm >=4.45.0
-    - typed-argument-parser >=1.6.1
-    - rdkit >=2020.03.1.0
+    - python>=3.11
+    - pytorch::pytorch>=2.1
+    - astartes
+    - aimsim
+    - configargparse
+    - lightning>=2.0
+    - numpy<2.0
+    - pandas
+    - rdkit
+    - scikit-learn
+    - scipy
 
 test:
   imports:
     - chemprop
   commands:
-    # - pip check  # rdkit is not correctly recognized
-    - chemprop_train --help
-    - chemprop_predict --help
-    - chemprop_fingerprint --help
-    - chemprop_hyperopt --help
-    - chemprop_interpret --help
-    - chemprop_web --help
-    - sklearn_train --help
-    - sklearn_predict --help
+    - chemprop train --help
+    - chemprop predict --help
+    - chemprop hpopt --help
   requires:
     - pip
 
