@@ -1,5 +1,5 @@
 {% set name = "chemprop" %}
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/chemprop-{{ version }}.tar.gz
-  sha256: cb2a07f47a02105c1159ef438cf848e5830e61092ed1b9711929f4e49832130b
+  sha256: cff407ba2ccbfa66d4aa48814fcdb0e5b4dbd0a2579eeccb3f4cc1fcedd80979
 
 build:
   noarch: python
