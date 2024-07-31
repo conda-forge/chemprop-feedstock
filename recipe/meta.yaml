@@ -20,6 +20,7 @@ requirements:
   host:
     - python <3.13,>=3.11
     - pip
+    - setuptools
   run:
     - pytorch >=2.1
     - python <3.13,>=3.11
