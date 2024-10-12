@@ -1,5 +1,5 @@
 {% set name = "chemprop" %}
-{% set version = "2.0.4" %}
+{% set version = "2.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/chemprop-{{ version }}.tar.gz
-  sha256: 701bf0e8202c9d4c1e4b15f0c50535d276872f2c5959a9abb51d6c3907809dc1
+  sha256: 3ce774398ed7fa9cc28b36da104252a6db092a4919eac67f9d747294375b66e0
 
 build:
   noarch: python
@@ -22,6 +22,8 @@ requirements:
     - pip
     - setuptools
   run:
+    - descriptastorus
+    - rich
     - pytorch >=2.1
     - python <3.13,>=3.11
     - pytorch::pytorch >=2.1
