@@ -1,3 +1,4 @@
+{% set python_min = '3.11' %}
 {% set name = "chemprop" %}
 {% set version = "2.1.0" %}
 
@@ -6,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/chemprop-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/chemprop-{{ version }}.tar.gz
   sha256: effc7fc5b0a2635cd0e4f330895ae48368ca0d8aafc5e6f7446f760d0ca607e5
 
 build:
@@ -14,18 +15,18 @@ build:
   entry_points:
     - chemprop=chemprop.cli.main:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python <3.13,>=3.11
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
     - descriptastorus
     - rich
     - pytorch >=2.1
-    - python <3.13,>=3.11
+    - python >={{ python_min }},<3.13
     - pytorch::pytorch >=2.1
     - astartes
     - aimsim
@@ -46,6 +47,7 @@ test:
     - chemprop hpopt --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/chemprop/chemprop
