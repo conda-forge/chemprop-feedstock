@@ -23,7 +23,6 @@ requirements:
     - pip
     - setuptools
   run:
-    - cuik_molmaker_pin
     - descriptastorus
     - rich
     - pytorch >=2.1
