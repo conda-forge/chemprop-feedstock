@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "chemprop" %}
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/chemprop-{{ version }}.tar.gz
-  sha256: 8d7ca89624aa637e954b531e820218065b170863549bcfd553b4223660f9375a 
+  sha256: b9ddcf1b4d6657b4baddcbfd563855e00bd7d7b8baae2c460f9ef181a56edae0
 
 build:
   noarch: python
@@ -23,6 +23,7 @@ requirements:
     - pip
     - setuptools
   run:
+    - cuik_molmaker_pin
     - descriptastorus
     - rich
     - pytorch >=2.1
