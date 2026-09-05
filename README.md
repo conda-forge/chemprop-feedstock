@@ -42,31 +42,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `chemprop` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install chemprop
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install chemprop
 ```
 
-It is possible to list all of the versions of `chemprop` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add chemprop
+# for installing globally
+pixi global install chemprop
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `chemprop` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search chemprop --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search chemprop --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search chemprop --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -78,6 +120,8 @@ mamba repoquery whoneeds chemprop --channel conda-forge
 # List dependencies of `chemprop`:
 mamba repoquery depends chemprop --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
