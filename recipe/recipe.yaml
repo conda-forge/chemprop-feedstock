@@ -1,0 +1,72 @@
+schema_version: 1
+
+context:
+  name: chemprop
+  version: "2.3.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/chemprop-${{ version }}.tar.gz
+  sha256: b9ddcf1b4d6657b4baddcbfd563855e00bd7d7b8baae2c460f9ef181a56edae0
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - chemprop=chemprop.cli.main:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - descriptastorus
+    - rich
+    - pytorch >=2.1
+    - python >=${{ python_min }},<3.13
+    - astartes
+    - aimsim
+    - configargparse
+    - lightning >=2.0
+    - numpy
+    - pandas
+    - rdkit
+    - scikit-learn
+    - scipy
+    - cuik_molmaker >0.2
+    - myerson >=1.0.1
+
+tests:
+  - python:
+      imports:
+        - chemprop
+      pip_check: false
+      python_version:
+        - ${{ python_min }}
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - chemprop train --help
+      - chemprop predict --help
+      - chemprop hpopt --help
+
+about:
+  summary: Molecular Property Prediction with Message Passing Neural Networks
+  license: MIT
+  license_file: LICENSE.txt
+  homepage: https://github.com/chemprop/chemprop
+  repository: https://github.com/chemprop/chemprop
+
+extra:
+  recipe-maintainers:
+    - JacksonBurns
+    - jan-janssen
